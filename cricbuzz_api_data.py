@@ -29,16 +29,16 @@ for item in configs:
 
         json_data = response.json()
 
-        # 🔥 Handle different response structures
+        # Handle different response structures
         if "rank" in json_data:
             data = json_data["rank"]
         elif "teams" in json_data:
             data = json_data["teams"]
         else:
-            print(f"⚠ No ranking data found for {category}-{format_type}")
+            print(f"[WARNING] No ranking data found for {category}-{format_type}")
             data = []
 
-        # ✅ Create file even if empty
+        # Create file even if empty
         filename = f"{format_type}_{category}_rankings.csv"
 
         with open(filename, "w", newline="", encoding="utf-8") as f:
@@ -58,9 +58,9 @@ for item in configs:
                     "id": entry.get("id")
                 })
 
-        print(f"✅ Created {filename} | Records: {len(data)}")
+        print(f"[SUCCESS] Created {filename} | Records: {len(data)}")
 
     else:
-        print(f"❌ API Failed: {category}-{format_type}")
+        print(f"[ERROR] API Failed: {category}-{format_type}")
         print("Status Code:", response.status_code)
         print("Error:", response.text)
