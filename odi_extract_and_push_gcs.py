@@ -7,7 +7,7 @@ url = 'https://cricbuzz-cricket.p.rapidapi.com/stats/v1/rankings/batsmen'
 # batsmen|bowlers|allrounders|teams
 
 headers = {
-    'x-rapidapi-key': "e55e8060c0mshbffbe71cb381b06p1ad3d5jsn3f02ea2beeaa",
+    'x-rapidapi-key': "RAPIDAPI_KEY",
     'x-rapidapi-host': "cricbuzz-cricket.p.rapidapi.com"
 }
 
